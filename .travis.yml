@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t farisami/docker-react -f Dockerfile.dev .
+
+scripts:
+  - docker run farisami/docker-react npm run test -- --coverage
